@@ -17,7 +17,7 @@ export const Name = () => {
           onChange={(e) => setName(e.target.value)}
         />
       </form>
-      <button onClick={() => navigate('/result')}>Next</button>
+      <button onClick={() => navigate('/visit-frequency')}>Next</button>
       <button onClick={() => navigate(-1)}>Back</button>
     </Fragment>
   );

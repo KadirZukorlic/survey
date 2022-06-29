@@ -2,7 +2,12 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../App';
 
 export const Result = () => {
-  const { name } = useContext(AppContext);
+  const { name, visitFrequencyPoints } = useContext(AppContext);
 
-  return <div>{name}</div>;
+  return (
+    <div className="center">
+      <div>{name}</div>
+      <div>{visitFrequencyPoints}</div>
+    </div>
+  );
 };

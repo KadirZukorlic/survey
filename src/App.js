@@ -5,18 +5,31 @@ import { HomePage } from './pages/HomePage';
 import { Name } from './components/Questions/Name';
 import { Result } from './components/result/Result';
 import './App.css';
+import { VisitFrequency } from './components/Questions/VisitFrequency';
 
 export const AppContext = createContext();
 
 function App() {
   const [name, setName] = useState('');
+  const [selectedVisitFrequency, setSelectedVisitFrequency] = useState('');
+  const [visitFrequencyPoints, setVisitFrequencyPoints] = useState(0);
 
   return (
     <BrowserRouter>
-      <AppContext.Provider value={{ name, setName }}>
+      <AppContext.Provider
+        value={{
+          name,
+          setName,
+          selectedVisitFrequency,
+          setSelectedVisitFrequency,
+          visitFrequencyPoints,
+          setVisitFrequencyPoints,
+        }}
+      >
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/name" element={<Name />} />
+          <Route exact path="/visit-frequency" element={<VisitFrequency />} />
           <Route exact path="/result" element={<Result />} />
         </Routes>
       </AppContext.Provider>
