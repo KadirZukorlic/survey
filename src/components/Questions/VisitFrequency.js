@@ -1,12 +1,17 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
+
+const questions = [
+  { label: 'Often', type: 'radio', value: 'Often' },
+  { label: 'Rarely', type: 'radio', value: 'Rarely' },
+  { label: 'Never', type: 'radio', value: 'Never' },
+];
 
 export const VisitFrequency = () => {
   const {
     selectedVisitFrequency,
     setSelectedVisitFrequency,
-    visitFrequencyPoints,
     setVisitFrequencyPoints,
   } = useContext(AppContext);
   const navigate = useNavigate();
@@ -22,41 +27,22 @@ export const VisitFrequency = () => {
       setVisitFrequencyPoints(0);
     }
   };
-  console.log(visitFrequencyPoints);
 
   return (
     <div>
       <div>Question 1</div>
       <h1>How often do you visit this website?</h1>
-      <form>
+      {questions.map((question) => (
         <label>
           <input
-            type="radio"
-            value="Often"
-            checked={selectedVisitFrequency === 'Often'}
+            type={question.type}
+            value={question.value}
+            checked={selectedVisitFrequency === question.value}
             onChange={onChangeHandler}
           />
-          Often
+          {question.label}
         </label>
-        <label>
-          <input
-            type="radio"
-            value="Rarely"
-            checked={selectedVisitFrequency === 'Rarely'}
-            onChange={onChangeHandler}
-          />
-          Rarely
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="Never"
-            checked={selectedVisitFrequency === 'Never'}
-            onChange={onChangeHandler}
-          />
-          Never
-        </label>
-      </form>
+      ))}
       <button onClick={() => navigate('/result')}>Next</button>
       <button onClick={() => navigate(-1)}>Back</button>
     </div>
