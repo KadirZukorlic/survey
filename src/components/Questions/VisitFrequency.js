@@ -33,7 +33,7 @@ export const VisitFrequency = () => {
       <div>Question 1</div>
       <h1>How often do you visit this website?</h1>
       {questions.map((question) => (
-        <label>
+        <label key={question.label}>
           <input
             type={question.type}
             value={question.value}
