@@ -26,13 +26,13 @@ export const Options = () => {
           type="checkbox"
           checked={optionOneChecked}
           value={optionOneChecked}
-          onChange={(e) => {
+          onChange={() => {
             setOptionOneChecked(!optionOneChecked);
-            if (e.target.value) {
+            if (!optionOneChecked) {
               setOptionsPoints((prevState) => prevState + 2);
             }
             if (optionOneChecked) {
-              setOptionsPoints((prevState) => prevState - 4);
+              setOptionsPoints((prevState) => prevState - 2);
             }
           }}
         />
@@ -43,13 +43,13 @@ export const Options = () => {
         <input
           type="checkbox"
           checked={optionTwoChecked}
-          onChange={(e) => {
+          onChange={() => {
             setOptionTwoChecked(!optionTwoChecked);
-            if (e.target.value) {
+            if (!optionTwoChecked) {
               setOptionsPoints((prevState) => prevState + 2);
             }
             if (optionTwoChecked) {
-              setOptionsPoints((prevState) => prevState - 4);
+              setOptionsPoints((prevState) => prevState - 2);
             }
           }}
         />
@@ -60,13 +60,13 @@ export const Options = () => {
         <input
           type="checkbox"
           checked={optionThreeChecked}
-          onChange={(e) => {
+          onChange={() => {
             setOptionThreeChecked(!optionThreeChecked);
-            if (e.target.value) {
+            if (!optionThreeChecked) {
               setOptionsPoints((prevState) => prevState + 2);
             }
             if (optionThreeChecked) {
-              setOptionsPoints((prevState) => prevState - 4);
+              setOptionsPoints((prevState) => prevState - 2);
             }
           }}
         />
