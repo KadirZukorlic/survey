@@ -43,7 +43,7 @@ export const VisitFrequency = () => {
           {question.label}
         </label>
       ))}
-      <button onClick={() => navigate('/result')}>Next</button>
+      <button onClick={() => navigate('/options')}>Next</button>
       <button onClick={() => navigate(-1)}>Back</button>
     </div>
   );

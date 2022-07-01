@@ -1,10 +1,5 @@
-import React, {
-  useState,
-  useEffect,
-  useContext,
-  useCallback,
-  useMemo,
-} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
 
 export const Options = () => {
@@ -12,6 +7,7 @@ export const Options = () => {
   const [optionOneChecked, setOptionOneChecked] = useState(false);
   const [optionTwoChecked, setOptionTwoChecked] = useState(false);
   const [optionThreeChecked, setOptionThreeChecked] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log(!!optionOneChecked);
@@ -73,7 +69,7 @@ export const Options = () => {
         Option 3
       </label>
 
-      <button type="submit">next</button>
+      <button onClick={() => navigate('/result')}>next</button>
     </form>
   );
 };
