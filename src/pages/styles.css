@@ -1,0 +1,13 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+p {
+  max-width: 80%;
+  font-size: 20px;
+}

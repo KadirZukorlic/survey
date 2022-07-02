@@ -9,6 +9,7 @@ import { Options } from './components/Questions/Options';
 import { Country } from './components/Questions/Contry';
 
 import './App.css';
+import { MainLayout } from './layout/MainLayout';
 
 export const AppContext = createContext();
 
@@ -20,31 +21,33 @@ function App() {
   const [countryPoints, setCountryPoints] = useState(0);
 
   return (
-    <BrowserRouter>
-      <AppContext.Provider
-        value={{
-          name,
-          setName,
-          selectedVisitFrequency,
-          setSelectedVisitFrequency,
-          visitFrequencyPoints,
-          setVisitFrequencyPoints,
-          optionsPoints,
-          setOptionsPoints,
-          countryPoints,
-          setCountryPoints,
-        }}
-      >
-        <Routes>
-          <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/name" element={<Name />} />
-          <Route exact path="/visit-frequency" element={<VisitFrequency />} />
-          <Route exact path="/options" element={<Options />} />
-          <Route exact path="/country" element={<Country />} />
-          <Route exact path="/result" element={<Result />} />
-        </Routes>
-      </AppContext.Provider>
-    </BrowserRouter>
+    <MainLayout>
+      <BrowserRouter>
+        <AppContext.Provider
+          value={{
+            name,
+            setName,
+            selectedVisitFrequency,
+            setSelectedVisitFrequency,
+            visitFrequencyPoints,
+            setVisitFrequencyPoints,
+            optionsPoints,
+            setOptionsPoints,
+            countryPoints,
+            setCountryPoints,
+          }}
+        >
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/name" element={<Name />} />
+            <Route exact path="/visit-frequency" element={<VisitFrequency />} />
+            <Route exact path="/options" element={<Options />} />
+            <Route exact path="/country" element={<Country />} />
+            <Route exact path="/result" element={<Result />} />
+          </Routes>
+        </AppContext.Provider>
+      </BrowserRouter>
+    </MainLayout>
   );
 }
 
