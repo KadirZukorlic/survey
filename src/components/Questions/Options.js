@@ -16,7 +16,7 @@ export const Options = () => {
 
   //Try to remove label and add label beside input
   return (
-    <form>
+    <div>
       <label>
         <input
           type="checkbox"
@@ -69,7 +69,7 @@ export const Options = () => {
         Option 3
       </label>
 
-      <button onClick={() => navigate('/result')}>next</button>
-    </form>
+      <button onClick={() => navigate('/country')}>next</button>
+    </div>
   );
 };

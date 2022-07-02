@@ -6,6 +6,7 @@ import { Name } from './components/Questions/Name';
 import { Result } from './components/result/Result';
 import { VisitFrequency } from './components/Questions/VisitFrequency';
 import { Options } from './components/Questions/Options';
+import { Country } from './components/Questions/Contry';
 
 import './App.css';
 
@@ -14,8 +15,9 @@ export const AppContext = createContext();
 function App() {
   const [name, setName] = useState('');
   const [selectedVisitFrequency, setSelectedVisitFrequency] = useState('');
-  const [visitFrequencyPoints, setVisitFrequencyPoints] = useState(0);
   const [optionsPoints, setOptionsPoints] = useState(0);
+  const [visitFrequencyPoints, setVisitFrequencyPoints] = useState(0);
+  const [countryPoints, setCountryPoints] = useState(0);
 
   return (
     <BrowserRouter>
@@ -29,6 +31,8 @@ function App() {
           setVisitFrequencyPoints,
           optionsPoints,
           setOptionsPoints,
+          countryPoints,
+          setCountryPoints,
         }}
       >
         <Routes>
@@ -36,6 +40,7 @@ function App() {
           <Route exact path="/name" element={<Name />} />
           <Route exact path="/visit-frequency" element={<VisitFrequency />} />
           <Route exact path="/options" element={<Options />} />
+          <Route exact path="/country" element={<Country />} />
           <Route exact path="/result" element={<Result />} />
         </Routes>
       </AppContext.Provider>

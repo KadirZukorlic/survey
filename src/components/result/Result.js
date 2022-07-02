@@ -2,20 +2,21 @@ import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../App';
 
 export const Result = () => {
-  const { name, visitFrequencyPoints, optionsPoints } = useContext(AppContext);
+  const { name, visitFrequencyPoints, optionsPoints, countryPoints } =
+    useContext(AppContext);
 
   const calculateTotalPoints = () => {
-    return visitFrequencyPoints + optionsPoints;
+    // score points / 0.16 is equal to precentage for progress bar
+    return visitFrequencyPoints + optionsPoints + countryPoints;
   };
 
   useEffect(() => {
-    console.log(calculatePoints());
+    console.log(calculateTotalPoints());
   }, []);
 
   return (
-    <div className="center">
+    <div className="center" style={{ fontSize: '2rem' }}>
       <div>{name}</div>
-      <div>{visitFrequencyPoints}</div>
       <div>{calculateTotalPoints()}</div>
     </div>
   );
