@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowCircleRight } from 'phosphor-react';
 import { useNavigate } from 'react-router-dom';
 
 import './styles.css';
@@ -19,7 +20,9 @@ export const HomePage = () => {
         rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
         ipsum dolor sit amet.
       </p>
-      <button onClick={() => navigate('/name')}>Start the survey</button>
+      <button className="btn" onClick={() => navigate('/name')}>
+        Start the survey <ArrowCircleRight width={32} />
+      </button>
     </div>
   );
 };
