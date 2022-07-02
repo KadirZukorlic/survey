@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowCircleRight } from 'phosphor-react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '../components/UI/Button';
 
 import './styles.css';
 
@@ -8,7 +8,7 @@ export const HomePage = () => {
   const navigate = useNavigate();
   return (
     <div className="content">
-      <h1 style={{ margin: '0', fontSize: '5rem' }}>Welcome to Our survey.</h1>
+      <h1 style={{ fontSize: '5rem' }}>Welcome to Our survey.</h1>
       <p>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
@@ -20,9 +20,7 @@ export const HomePage = () => {
         rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
         ipsum dolor sit amet.
       </p>
-      <button className="btn" onClick={() => navigate('/name')}>
-        Start the survey <ArrowCircleRight width={32} />
-      </button>
+      <Button onClick={() => navigate('/name')}>Start the survey</Button>
     </div>
   );
 };
