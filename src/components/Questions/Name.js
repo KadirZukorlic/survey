@@ -15,7 +15,7 @@ export const Name = () => {
       <h1 style={{ fontSize: '3rem' }}>Please enter your name.</h1>
       <input
         type="text"
-        placeholder="Kadir Zukorlic"
+        placeholder="John Doe"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />

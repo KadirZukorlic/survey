@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
 
+import './visitFrequency.styles.css';
+
 const questions = [
   { label: 'Often', type: 'radio', value: 'Often' },
   { label: 'Rarely', type: 'radio', value: 'Rarely' },
@@ -29,20 +31,22 @@ export const VisitFrequency = () => {
   };
 
   return (
-    <div>
+    <div className="visit-content">
       <div>Question 1</div>
       <h1>How often do you visit this website?</h1>
-      {questions.map((question) => (
-        <label key={question.label}>
-          <input
-            type={question.type}
-            value={question.value}
-            checked={selectedVisitFrequency === question.value}
-            onChange={onChangeHandler}
-          />
-          {question.label}
-        </label>
-      ))}
+      <div className="row">
+        {questions.map((question) => (
+          <div className="radioButtons">
+            <input
+              type={question.type}
+              value={question.value}
+              checked={selectedVisitFrequency === question.value}
+              onChange={onChangeHandler}
+            />
+            {question.label}
+          </div>
+        ))}
+      </div>
       <button onClick={() => navigate('/options')}>Next</button>
       <button onClick={() => navigate(-1)}>Back</button>
     </div>
