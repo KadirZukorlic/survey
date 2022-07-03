@@ -8,7 +8,6 @@ import { VisitFrequency } from './components/Questions/VisitFrequency';
 import { Options } from './components/Questions/Options';
 import { Country } from './components/Questions/Contry';
 
-import './App.css';
 import { MainLayout } from './layout/MainLayout';
 
 export const AppContext = createContext();

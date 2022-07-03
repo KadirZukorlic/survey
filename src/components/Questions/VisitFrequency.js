@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
+import { Button } from '../UI/Button';
+import { Check } from 'phosphor-react';
 
 import './visitFrequency.styles.css';
 
@@ -32,11 +34,15 @@ export const VisitFrequency = () => {
 
   return (
     <div className="visit-content">
-      <div>Question 1</div>
+      <div
+        style={{ marginBottom: '20px', fontSize: '24px', fontWeight: 'bold' }}
+      >
+        Question 1
+      </div>
       <h1>How often do you visit this website?</h1>
       <div className="row">
         {questions.map((question) => (
-          <div className="radioButtons">
+          <label className="form-control">
             <input
               type={question.type}
               value={question.value}
@@ -44,11 +50,16 @@ export const VisitFrequency = () => {
               onChange={onChangeHandler}
             />
             {question.label}
-          </div>
+            <div className="checkIcon">
+              <Check size={20} color="#080808" />
+            </div>
+          </label>
         ))}
       </div>
-      <button onClick={() => navigate('/options')}>Next</button>
-      <button onClick={() => navigate(-1)}>Back</button>
+      <div>
+        <Button onClick={() => navigate('/options')}>Next</Button>
+        <button onClick={() => navigate(-1)}>Back</button>
+      </div>
     </div>
   );
 };

@@ -14,6 +14,7 @@ export const Name = () => {
       <h3>WHO ARE YOU?</h3>
       <h1 style={{ fontSize: '3rem' }}>Please enter your name.</h1>
       <input
+        className="input"
         type="text"
         placeholder="John Doe"
         value={name}
