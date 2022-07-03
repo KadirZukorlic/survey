@@ -50,7 +50,7 @@ export const VisitFrequency = () => {
               onChange={onChangeHandler}
             />
             {question.label}
-            <div className="checkIcon">
+            <div className="radioIcon">
               <Check size={20} color="#080808" />
             </div>
           </label>

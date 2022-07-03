@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
+import { Check } from 'phosphor-react';
+import { Button } from '../UI/Button';
+
+import './options.styles.css';
 
 export const Options = () => {
   const { optionsPoints, setOptionsPoints } = useContext(AppContext);
@@ -16,60 +20,77 @@ export const Options = () => {
 
   //Try to remove label and add label beside input
   return (
-    <div>
-      <label>
-        <input
-          type="checkbox"
-          checked={optionOneChecked}
-          value={optionOneChecked}
-          onChange={() => {
-            setOptionOneChecked(!optionOneChecked);
-            if (!optionOneChecked) {
-              setOptionsPoints((prevState) => prevState + 2);
-            }
-            if (optionOneChecked) {
-              setOptionsPoints((prevState) => prevState - 2);
-            }
-          }}
-        />
-        Option 1
-      </label>
+    <div className="checkbox-wrapper">
+      <h3
+        style={{ marginBottom: '20px', fontSize: '24px', fontWeight: 'bold' }}
+      >
+        QUESTION TWO
+      </h3>
+      <h1>Please select atleast one option</h1>
+      <div className="form-wrap">
+        <label className="form-control">
+          <input
+            type="checkbox"
+            checked={optionOneChecked}
+            value={optionOneChecked}
+            onChange={() => {
+              setOptionOneChecked(!optionOneChecked);
+              if (!optionOneChecked) {
+                setOptionsPoints((prevState) => prevState + 2);
+              }
+              if (optionOneChecked) {
+                setOptionsPoints((prevState) => prevState - 2);
+              }
+            }}
+          />
+          Option 1
+          <div className="check-icon">
+            <Check size={24} color="#080808" />
+          </div>
+        </label>
 
-      <label>
-        <input
-          type="checkbox"
-          checked={optionTwoChecked}
-          onChange={() => {
-            setOptionTwoChecked(!optionTwoChecked);
-            if (!optionTwoChecked) {
-              setOptionsPoints((prevState) => prevState + 2);
-            }
-            if (optionTwoChecked) {
-              setOptionsPoints((prevState) => prevState - 2);
-            }
-          }}
-        />
-        Option 2
-      </label>
+        <label className="form-control">
+          <input
+            type="checkbox"
+            checked={optionTwoChecked}
+            onChange={() => {
+              setOptionTwoChecked(!optionTwoChecked);
+              if (!optionTwoChecked) {
+                setOptionsPoints((prevState) => prevState + 2);
+              }
+              if (optionTwoChecked) {
+                setOptionsPoints((prevState) => prevState - 2);
+              }
+            }}
+          />
+          Option 2
+          <div className="check-icon">
+            <Check size={24} color="#080808" />
+          </div>
+        </label>
 
-      <label>
-        <input
-          type="checkbox"
-          checked={optionThreeChecked}
-          onChange={() => {
-            setOptionThreeChecked(!optionThreeChecked);
-            if (!optionThreeChecked) {
-              setOptionsPoints((prevState) => prevState + 2);
-            }
-            if (optionThreeChecked) {
-              setOptionsPoints((prevState) => prevState - 2);
-            }
-          }}
-        />
-        Option 3
-      </label>
+        <label className="form-control">
+          <input
+            type="checkbox"
+            checked={optionThreeChecked}
+            onChange={() => {
+              setOptionThreeChecked(!optionThreeChecked);
+              if (!optionThreeChecked) {
+                setOptionsPoints((prevState) => prevState + 2);
+              }
+              if (optionThreeChecked) {
+                setOptionsPoints((prevState) => prevState - 2);
+              }
+            }}
+          />
+          Option 3
+          <div className="check-icon">
+            <Check size={24} color="#080808" />
+          </div>
+        </label>
 
-      <button onClick={() => navigate('/country')}>next</button>
+        <Button onClick={() => navigate('/country')}>next</Button>
+      </div>
     </div>
   );
 };
