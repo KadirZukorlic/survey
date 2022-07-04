@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
+import { BackButton } from '../UI/BackButton';
 import { Button } from '../UI/Button';
 
 import './name.styles.css';
@@ -10,7 +11,7 @@ export const Name = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="content">
+    <div className="name-wrapper">
       <h3>WHO ARE YOU?</h3>
       <h1 style={{ fontSize: '3rem' }}>Please enter your name.</h1>
       <input
@@ -20,8 +21,10 @@ export const Name = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <Button onClick={() => navigate('/visit-frequency')}> Next </Button>
-      <button onClick={() => navigate(-1)}>Back</button>
+      <div>
+        <Button onClick={() => navigate('/visit-frequency')}> Next </Button>
+        <BackButton onClick={() => navigate(-1)} />
+      </div>
     </div>
   );
 };

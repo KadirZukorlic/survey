@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
 import { Button } from '../UI/Button';
+import { BackButton } from '../UI/BackButton';
 import { Check } from 'phosphor-react';
 
 import './visitFrequency.styles.css';
@@ -58,7 +59,7 @@ export const VisitFrequency = () => {
       </div>
       <div>
         <Button onClick={() => navigate('/options')}>Next</Button>
-        <button onClick={() => navigate(-1)}>Back</button>
+        <BackButton onClick={() => navigate(-1)} />
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
 import { Check } from 'phosphor-react';
 import { Button } from '../UI/Button';
+import { BackButton } from '../UI/BackButton';
 
 import './options.styles.css';
 
@@ -88,9 +89,9 @@ export const Options = () => {
             <Check size={24} color="#080808" />
           </div>
         </label>
-
-        <Button onClick={() => navigate('/country')}>next</Button>
       </div>
+      <Button onClick={() => navigate('/country')}>next</Button>
+      <BackButton onClick={() => navigate(-1)} />
     </div>
   );
 };

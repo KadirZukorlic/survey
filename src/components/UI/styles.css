@@ -9,4 +9,18 @@
   text-transform: uppercase;
   letter-spacing: 0.4px;
   cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  all: unset;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.back-btn:focus {
+  outline: none;
 }
