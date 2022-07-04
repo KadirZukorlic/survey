@@ -19,28 +19,30 @@ export const Country = () => {
     <div className="country-wrapper">
       <h3 style={{ fontSize: '24px', fontWeight: 'bold' }}>QUESTION THREE</h3>
       <h1>Where are you from?</h1>
-      <select
-        onChange={(e) => {
-          if (e.target.value === 'germany') {
-            setCountryPoints(3);
-          }
-          if (e.target.value === 'sweden') {
-            setCountryPoints(5);
-          }
-          if (e.target.value === 'italy') {
-            setCountryPoints(5);
-          }
-          if (e.target.value === 'spain') {
-            setCountryPoints(3);
-          }
-          console.log(e.target.value);
-        }}
-      >
-        <option value="germany">Germany</option>
-        <option value="sweden">Sweden</option>
-        <option value="italy">Italy</option>
-        <option value="spain">Spain</option>
-      </select>
+      <div className="select">
+        <select
+          onChange={(e) => {
+            if (e.target.value === 'germany') {
+              setCountryPoints(3);
+            }
+            if (e.target.value === 'sweden') {
+              setCountryPoints(5);
+            }
+            if (e.target.value === 'italy') {
+              setCountryPoints(5);
+            }
+            if (e.target.value === 'spain') {
+              setCountryPoints(3);
+            }
+            console.log(e.target.value);
+          }}
+        >
+          <option value="germany">Germany</option>
+          <option value="sweden">Sweden</option>
+          <option value="italy">Italy</option>
+          <option value="spain">Spain</option>
+        </select>
+      </div>
       <div>
         <Button onClick={() => navigate('/result')}>Next</Button>
         <BackButton onClick={() => navigate(-1)} />

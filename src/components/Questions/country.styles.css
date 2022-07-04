@@ -7,3 +7,41 @@
   gap: 50px;
   /* change gap when styling is finished */
 }
+
+.select {
+  width: 500px;
+  display: grid;
+  grid-template-areas: 'select';
+  align-items: center;
+}
+
+select {
+  appearance: none;
+  background-color: #0d0d0d;
+  width: 100%;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #ffffff;
+}
+
+select:focus {
+  background-color: #000;
+}
+
+.select::after {
+  content: '';
+  width: 0.8em;
+  height: 0.5em;
+  background-color: #fff;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  justify-self: end;
+  margin-right: 10px;
+}
+
+select,
+.select:after {
+  grid-area: select;
+}
