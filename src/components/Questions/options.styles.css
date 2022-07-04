@@ -1,3 +1,10 @@
+.checkbox-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .form-wrap {
   display: flex;
   justify-content: center;
@@ -37,11 +44,4 @@ input[type='checkbox']:checked + .check-icon {
   display: none;
   left: 6px;
   top: -2.2px;
-}
-
-.checkbox-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }

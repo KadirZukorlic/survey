@@ -1,6 +1,10 @@
-import React, { Fragment, useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
+import { BackButton } from '../UI/BackButton';
+import { Button } from '../UI/Button';
+
+import './country.styles.css';
 
 export const Country = () => {
   const [country, setCountry] = useState('');
@@ -12,9 +16,9 @@ export const Country = () => {
   }, [countryPoints]);
 
   return (
-    <Fragment>
-      <h3>Question 3</h3>
-      <h1>Where are You from?</h1>
+    <div className="country-wrapper">
+      <h3 style={{ fontSize: '24px', fontWeight: 'bold' }}>QUESTION THREE</h3>
+      <h1>Where are you from?</h1>
       <select
         onChange={(e) => {
           if (e.target.value === 'germany') {
@@ -37,9 +41,11 @@ export const Country = () => {
         <option value="italy">Italy</option>
         <option value="spain">Spain</option>
       </select>
-      <button onClick={() => navigate('/result')}>Next</button>
-      <button onClick={() => navigate(-1)}>Back</button>
-    </Fragment>
+      <div>
+        <Button onClick={() => navigate('/result')}>Next</Button>
+        <BackButton onClick={() => navigate(-1)} />
+      </div>
+    </div>
   );
 };
 
