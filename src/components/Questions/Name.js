@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
-import { BackButton } from '../UI/BackButton';
-import { Button } from '../UI/Button';
+import { BackButton } from '../UI/Buttons/BackButton';
+import { Button } from '../UI/Buttons/Button';
 
 import './name.styles.css';
 
@@ -12,7 +12,7 @@ export const Name = () => {
 
   return (
     <div className="name-wrapper">
-      <h3>WHO ARE YOU?</h3>
+      <div style={{ fontWeight: 'bold' }}>WHO ARE YOU?</div>
       <h1 style={{ fontSize: '3rem' }}>Please enter your name.</h1>
       <input
         className="input"

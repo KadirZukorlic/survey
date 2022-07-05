@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
-import { Button } from '../UI/Button';
-import { BackButton } from '../UI/BackButton';
+import { Button } from '../UI/Buttons/Button';
+import { BackButton } from '../UI/Buttons/BackButton';
 import { Check } from 'phosphor-react';
 
 import './visitFrequency.styles.css';
@@ -35,11 +35,7 @@ export const VisitFrequency = () => {
 
   return (
     <div className="visit-content">
-      <div
-        style={{ marginBottom: '20px', fontSize: '24px', fontWeight: 'bold' }}
-      >
-        Question 1
-      </div>
+      <div style={{ marginBottom: '20px', fontWeight: 'bold' }}>QUESTION 1</div>
       <h1>How often do you visit this website?</h1>
       <div className="row">
         {questions.map((question) => (

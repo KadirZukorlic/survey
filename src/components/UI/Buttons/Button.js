@@ -3,10 +3,10 @@ import { ArrowCircleRight } from 'phosphor-react';
 
 import './styles.css';
 
-export const Button = ({ children, onClick }) => {
+export const Button = ({ children, onClick, showIcon = true }) => {
   return (
     <button className="btn" onClick={onClick}>
-      {children} <ArrowCircleRight width={32} />
+      {children} {showIcon && <ArrowCircleRight width={32} />}
     </button>
   );
 };

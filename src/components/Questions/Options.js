@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
 import { Check } from 'phosphor-react';
-import { Button } from '../UI/Button';
-import { BackButton } from '../UI/BackButton';
+import { Button } from '../UI/Buttons/Button';
+import { BackButton } from '../UI/Buttons/BackButton';
 
 import './options.styles.css';
 
@@ -22,11 +22,7 @@ export const Options = () => {
   //Try to remove label and add label beside input
   return (
     <div className="checkbox-wrapper">
-      <h3
-        style={{ marginBottom: '20px', fontSize: '24px', fontWeight: 'bold' }}
-      >
-        QUESTION TWO
-      </h3>
+      <div style={{ marginBottom: '20px', fontWeight: 'bold' }}>QUESTION 2</div>
       <h1>Please select atleast one option</h1>
       <div className="form-wrap">
         <label className="form-control">

@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
-import { BackButton } from '../UI/BackButton';
-import { Button } from '../UI/Button';
+import { BackButton } from '../UI/Buttons/BackButton';
+import { Button } from '../UI/Buttons/Button';
 
 import './country.styles.css';
 
@@ -17,9 +17,9 @@ export const Country = () => {
 
   return (
     <div className="country-wrapper">
-      <h3 style={{ fontSize: '24px', fontWeight: 'bold' }}>QUESTION THREE</h3>
+      <div style={{ fontWeight: 'bold' }}>QUESTION 3</div>
       <h1>Where are you from?</h1>
-      <div className="select">
+      <div className="select-wrapper">
         <select
           onChange={(e) => {
             if (e.target.value === 'germany') {
@@ -37,6 +37,9 @@ export const Country = () => {
             console.log(e.target.value);
           }}
         >
+          <option value="" disabled selected hidden>
+            Please choose your country?
+          </option>
           <option value="germany">Germany</option>
           <option value="sweden">Sweden</option>
           <option value="italy">Italy</option>
@@ -44,7 +47,7 @@ export const Country = () => {
         </select>
       </div>
       <div>
-        <Button onClick={() => navigate('/result')}>Next</Button>
+        <Button onClick={() => navigate('/result')}>Finish</Button>
         <BackButton onClick={() => navigate(-1)} />
       </div>
     </div>

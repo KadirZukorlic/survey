@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 //Components
 import { Name } from './components/Questions/Name';
-import { Result } from './components/result/Result';
+import { Result } from './components/Result/Result';
 import { VisitFrequency } from './components/Questions/VisitFrequency';
 import { Options } from './components/Questions/Options';
 import { Country } from './components/Questions/Contry';
@@ -13,7 +13,7 @@ import { MainLayout } from './layout/MainLayout';
 export const AppContext = createContext();
 
 function App() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('Kadir Zukorlic');
   const [selectedVisitFrequency, setSelectedVisitFrequency] = useState('');
   const [optionsPoints, setOptionsPoints] = useState(0);
   const [visitFrequencyPoints, setVisitFrequencyPoints] = useState(0);
