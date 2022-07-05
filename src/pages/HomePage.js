@@ -8,7 +8,7 @@ export const HomePage = () => {
   const navigate = useNavigate();
   return (
     <div className="content">
-      <h1 style={{ fontSize: '5rem' }}>Welcome to Our survey.</h1>
+      <h1>Welcome to Our survey.</h1>
       <p>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam

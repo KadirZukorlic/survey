@@ -6,7 +6,7 @@ import { ProgressBar } from '../UI/ProgressBar/ProgressBar';
 import './result.styles.css';
 
 export const Result = () => {
-  const { name, visitFrequencyPoints, optionsPoints, countryPoints } =
+  const { name, setName, visitFrequencyPoints, optionsPoints, countryPoints } =
     useContext(AppContext);
   const navigate = useNavigate();
 
@@ -34,7 +34,13 @@ export const Result = () => {
       <div style={{ margin: '10px 0 30px 0' }}>
         <ProgressBar points={totalPoints} />
       </div>
-      <button className="startnew-btn" onClick={() => navigate('/')}>
+      <button
+        className="startnew-btn"
+        onClick={() => {
+          navigate('/');
+          setName('');
+        }}
+      >
         Start New
       </button>
     </div>
