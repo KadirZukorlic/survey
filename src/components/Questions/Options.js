@@ -6,22 +6,21 @@ import { Button } from '../UI/Buttons/Button';
 import { BackButton } from '../UI/Buttons/BackButton';
 
 import './options.styles.css';
+import { QuestionProgressBar } from '../UI/ProgressBar/QuestionProgressBar';
 
 export const Options = () => {
-  const { optionsPoints, setOptionsPoints } = useContext(AppContext);
+  const { name, optionsPoints, setOptionsPoints } = useContext(AppContext);
   const [optionOneChecked, setOptionOneChecked] = useState(false);
   const [optionTwoChecked, setOptionTwoChecked] = useState(false);
   const [optionThreeChecked, setOptionThreeChecked] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(!!optionOneChecked);
-    console.log(optionsPoints);
-  }, [optionOneChecked, optionTwoChecked, optionThreeChecked]);
+  useEffect(() => {}, [optionOneChecked, optionTwoChecked, optionThreeChecked]);
 
   //Try to remove label and add label beside input
   return (
     <div className="checkbox-wrapper">
+      <div className="survey-for">SURVEY FOR: {name}</div>
       <div style={{ marginBottom: '20px', fontWeight: 'bold' }}>QUESTION 2</div>
       <h1>Please select atleast one option</h1>
       <div className="form-wrap">
@@ -88,6 +87,10 @@ export const Options = () => {
       </div>
       <Button onClick={() => navigate('/country')}>next</Button>
       <BackButton onClick={() => navigate(-1)} />
+      <div className="question-progress">
+        <QuestionProgressBar width={66.67} />
+        <div className="question-num">Question 2 out of 3</div>
+      </div>
     </div>
   );
 };

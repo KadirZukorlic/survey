@@ -4,8 +4,17 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  width: 100%;
   gap: 20px;
-  /* change gap when styling is finished */
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.country-survey-for {
+  position: absolute;
+  top: -135px;
+  right: 30px;
+  font-weight: 600;
 }
 
 .select-wrapper {
@@ -46,3 +55,4 @@ select,
 .select-wrapper:after {
   grid-area: select;
 }
+

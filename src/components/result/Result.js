@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../App';
-import { Button } from '../UI/Buttons/Button';
+import { useNavigate } from 'react-router-dom';
 import { ProgressBar } from '../UI/ProgressBar/ProgressBar';
 
 import './result.styles.css';
@@ -8,6 +8,7 @@ import './result.styles.css';
 export const Result = () => {
   const { name, visitFrequencyPoints, optionsPoints, countryPoints } =
     useContext(AppContext);
+  const navigate = useNavigate();
 
   let totalPoints;
 
@@ -33,7 +34,9 @@ export const Result = () => {
       <div style={{ margin: '10px 0 30px 0' }}>
         <ProgressBar points={totalPoints} />
       </div>
-      <Button>Start New</Button>
+      <button className="startnew-btn" onClick={() => navigate('/')}>
+        Start New
+      </button>
     </div>
   );
 };

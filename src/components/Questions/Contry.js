@@ -3,20 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
 import { BackButton } from '../UI/Buttons/BackButton';
 import { Button } from '../UI/Buttons/Button';
+import { QuestionProgressBar } from '../UI/ProgressBar/QuestionProgressBar';
 
 import './country.styles.css';
 
 export const Country = () => {
-  const [country, setCountry] = useState('');
-  const { countryPoints, setCountryPoints } = useContext(AppContext);
+  const { name, countryPoints, setCountryPoints } = useContext(AppContext);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log(countryPoints);
-  }, [countryPoints]);
 
   return (
     <div className="country-wrapper">
+      <div className="country-survey-for">SURVEY FOR: {name}</div>
       <div style={{ fontWeight: 'bold' }}>QUESTION 3</div>
       <h1>Where are you from?</h1>
       <div className="select-wrapper">
@@ -34,7 +31,6 @@ export const Country = () => {
             if (e.target.value === 'spain') {
               setCountryPoints(3);
             }
-            console.log(e.target.value);
           }}
         >
           <option value="" disabled selected hidden>
@@ -49,6 +45,10 @@ export const Country = () => {
       <div>
         <Button onClick={() => navigate('/result')}>Finish</Button>
         <BackButton onClick={() => navigate(-1)} />
+      </div>
+      <div className="question-progress">
+        <QuestionProgressBar width={100} lastQuestion />
+        <div className="question-num">Question 3 out of 3</div>
       </div>
     </div>
   );

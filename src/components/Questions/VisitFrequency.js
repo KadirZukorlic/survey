@@ -6,6 +6,7 @@ import { BackButton } from '../UI/Buttons/BackButton';
 import { Check } from 'phosphor-react';
 
 import './visitFrequency.styles.css';
+import { QuestionProgressBar } from '../UI/ProgressBar/QuestionProgressBar';
 
 const questions = [
   { label: 'Often', type: 'radio', value: 'Often' },
@@ -15,6 +16,7 @@ const questions = [
 
 export const VisitFrequency = () => {
   const {
+    name,
     selectedVisitFrequency,
     setSelectedVisitFrequency,
     setVisitFrequencyPoints,
@@ -35,6 +37,7 @@ export const VisitFrequency = () => {
 
   return (
     <div className="visit-content">
+      <div className="survey-for">SURVEY FOR: {name}</div>
       <div style={{ marginBottom: '20px', fontWeight: 'bold' }}>QUESTION 1</div>
       <h1>How often do you visit this website?</h1>
       <div className="row">
@@ -56,6 +59,10 @@ export const VisitFrequency = () => {
       <div>
         <Button onClick={() => navigate('/options')}>Next</Button>
         <BackButton onClick={() => navigate(-1)} />
+      </div>
+      <div className="question-progress">
+        <QuestionProgressBar width={33.33} />
+        <div className="question-num">Question 1 out of 3</div>
       </div>
     </div>
   );

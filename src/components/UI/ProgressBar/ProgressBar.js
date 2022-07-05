@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const ProgressBar = (props) => {
-  console.log(props.points, 'PROPS POINTS------------', props.color);
   return (
     <Container>
       <Progress points={props.points} />

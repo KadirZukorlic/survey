@@ -4,6 +4,14 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  position: relative;
+  width: 100%;
+}
+.survey-for {
+  position: absolute;
+  top: -170px;
+  right: 30px;
+  font-weight: 600;
 }
 
 .radioButtons,
@@ -46,4 +54,24 @@ input[type='radio']:checked + .radioIcon {
   display: none;
   left: 9.25px;
   top: -1px;
+}
+
+.question-progress {
+  width: 90%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -180px;
+  position: relative;
+}
+
+.question-num {
+  align-self: end;
+  margin-bottom: 7px;
+  color: #767676;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
 }

@@ -13,7 +13,7 @@ import { MainLayout } from './layout/MainLayout';
 export const AppContext = createContext();
 
 function App() {
-  const [name, setName] = useState('Kadir Zukorlic');
+  const [name, setName] = useState('');
   const [selectedVisitFrequency, setSelectedVisitFrequency] = useState('');
   const [optionsPoints, setOptionsPoints] = useState(0);
   const [visitFrequencyPoints, setVisitFrequencyPoints] = useState(0);
