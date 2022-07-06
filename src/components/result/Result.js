@@ -5,8 +5,6 @@ import { ProgressBar } from '../UI/ProgressBar/ProgressBar';
 
 import './result.styles.css';
 
-//config username and email in git
-
 export const Result = () => {
   const { name, setName, visitFrequencyPoints, optionsPoints, countryPoints } =
     useContext(AppContext);
